@@ -7,7 +7,7 @@
 		
 		<br/>
 		
-		This application is an infrastructure to build a real-time pipeline, targeted for user binded data.
+		This application is a framework to build a real-time pipeline, targeted for user bound data.
 		In this specific case it allows to classify user credit card transactions, but it can be applied to twitter, click stream, rtb, etc.
 		The Classification of transactions is just an example. In the middle layer, every business logic can be applied.
 		
@@ -18,7 +18,7 @@
 		<br/>
 		
 		
-		This template can be also a base layer for anti-fraud applications. As soon as the transaction comes, it is classified and then it can be used as an input for a rule engine or a neural network for pattern recognition, in order to detect a possible fraud.
+		This template can be also a base layer for anti-fraud applications. As soon as the transaction comes in, it is classified and then it can be used as an input for a rule engine or a neural network for pattern recognition, in order to detect a possible fraud.
 
 		<br/>
 		<b>Disclaimer:</b> Random generated transactions contain real venues, they come from a Foursquare download.
@@ -32,7 +32,7 @@
 
         <h3>Persistence - At Least Once Delivery</h3>
 
-        <p>At-least-once-delivery design pattern allows not to lose any message at the cost of re-evaluate some message in case of failure. At-least-once-delivery is provided by <a href="http://doc.akka.io/docs/akka/snapshot/scala/persistence.html">Akka Persistence</a> module. To leverage this pattern data should be handled in a idempotent way, otherwise side effects will occur, for example functionalities like cassandra counters. shouldn't be used.
+        <p>At-least-once-delivery design pattern avoids the lost of any message at the cost of re-evaluate some message in case of failure. At-least-once-delivery is provided by <a href="http://doc.akka.io/docs/akka/snapshot/scala/persistence.html">Akka Persistence</a> module. To leverage this pattern data should be handled in a idempotent way, otherwise side effects will occur, for example functionalities like cassandra counters. shouldn't be used.
 		Akka Persistence enables to persist each state change, but in the at-least-once-delivery context it allows to store messages as soon as they come from the mailbox. When messages are delivered to a remote counterparty, stored messages can be unpersisted. Proceeding like this, if a fail occurs between message persistence and remote delivery, lost messages can be recovered from the persistent store.
         </p>
 		
@@ -53,7 +53,7 @@
     <div>
         <h2>Scope and Components</h2>
 
-        <p>This application is a real time distributed classificator. It classifies financial transactions using a batch trained model. Transactions ( mocked up in the template ) of a single customer ( ndg ) are processed by a dedicated actor. It permits to have data segregation and enables to make customizations per ndg. The training of the model is a schedulable batch process that reads a bunch of transactions. Once the model is ready it will be distributed across the cluster and each actor will start to use the new model.
+        <p>This application is a real time distributed classifier. It classifies financial transactions using a batch trained model. Transactions ( mocked up in the template ) of a single customer ( ndg ) are processed by a dedicated actor. It permits to have data segregation and enables to make customizations per ndg. The training of the model is a schedulable batch process that reads a bunch of transactions. Once the model is ready it will be distributed across the cluster and each actor will start to use the new model.
         </p>
 		
 		<h3>Transaction Generator (TransactionGenerator.scala)</h3>
