@@ -5,7 +5,7 @@ Building a scalable predictor with akka technologies
 
 ## Overview
 
-This application is a framewprk to build a real-time pipeline, targeted for user bound data.
+This application is a framework to build a real-time pipeline, targeted for user bound data.
 In this specific case it allows to classify user credit card transactions, but it can be applied to twitter, click stream, rtb, etc.
 The Classification of transactions is just an example. In the middle layer, every business logic can be applied.
 
