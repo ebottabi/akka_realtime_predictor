@@ -32,7 +32,7 @@ class TransactionClassifierSpec
 
   "Data classifier service" should {
 
-    "change state when it get a model" in {
+    "change state when it gets a model" in {
       val writeAll = WriteAll(timeout = 10.seconds)
       implicit val node = Cluster(system)
       val replicator = DistributedData(system).replicator
