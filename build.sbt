@@ -49,5 +49,3 @@ lazy val root = project.in(file("."))
   .configs(MultiJvm)
 
 fork in run := true
-
-fork in run := true
